@@ -8,8 +8,9 @@ import java.time.*;
 public class Event implements Serializable{
     String Name;
     String Venue;
-    int Duration, ID;
+    int Duration, ID, Attendees;
     Date StartDate, EndDate;
+    ArrayList<String> attName;
 
 
     public Event() {
@@ -19,15 +20,18 @@ public class Event implements Serializable{
         Duration = 0;
         StartDate = new Date();
         EndDate = new Date();
+        Attendees = 0;
+        attName = new ArrayList<String>();
     }
 
-    public Event(int id, String name, String venue, int duration, Date startDate, Date endDate) {
+    public Event(int id, String name, String venue, int duration, Date startDate, Date endDate, int attendees) {
         this.ID = id;
         this.Name = name;
         this.Venue = venue;
         this.Duration = duration;
         this.StartDate = startDate;
         this.EndDate = endDate;
+        this.Attendees = attendees;
     }
 
     public void addEvent(Event event) {
@@ -36,6 +40,18 @@ public class Event implements Serializable{
         EventWrite(storedEvents);
 
         System.out.println("Successfully added!");
+    }
+
+    public void addAttendee(ArrayList<String> list, Event event){
+        ArrayList<Event> storedEvents = EventRead();
+        for (int i = 0; i < storedEvents.size(); i++){
+            if (storedEvents.get(i).Name.equals(event.Name)){
+                storedEvents.get(i).Attendees = list.size();
+                storedEvents.get(i).attName = list;
+                break;
+            }
+        }
+        EventWrite(storedEvents);
     }
 
     public void EventWrite(ArrayList<Event> E){
