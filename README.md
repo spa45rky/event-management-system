@@ -8,4 +8,4 @@ An EMS program for my Networks class where client-server communication is showca
 4) Program will start
 
 ## Photos
-![Login Page](https://imgur.com/a/naInxZ9)
+![Login Page](https://github.com/spa45rky/event-management-system/blob/main/SCREENSHOTS/LOGIN.PNG)
