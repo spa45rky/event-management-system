@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
+import javax.swing.*;
 
 public class EventClient {
 
@@ -15,17 +16,23 @@ public class EventClient {
         DataOutputStream output = new DataOutputStream(s.getOutputStream());
         DataInputStream input = new DataInputStream(s.getInputStream());
 
-        String menuResponse = input.readUTF();
-        System.out.println("Connected to server!");
-        System.out.println(menuResponse);
-        System.out.println("Enter your choice: ");
-        int chooseMenu = read.nextInt();
-        output.writeInt(chooseMenu);
+        ClientUI beginUI = new ClientUI();
+        initialMenu(output, input, s, beginUI);
 
-        switch(chooseMenu){
-            case 1: loginClient(output, input, s);
-            case 2: registerClient(output, input, s);
-        }
+    }
+
+    static void initialMenu(DataOutputStream output, DataInputStream input, Socket s, ClientUI screen) throws IOException, ClassNotFoundException{
+//        String menuResponse = input.readUTF();
+////        System.out.println("Connected to server!");
+////        System.out.println(menuResponse);
+////        System.out.println("Enter your choice: ");
+////        int chooseMenu = read.nextInt();
+////        output.writeInt(chooseMenu);
+////
+////        switch(chooseMenu){
+////            case 1: loginClient(output, input, s);
+////            case 2: registerClient(output, input, s);
+////        }
     }
 
     static void loginClient(DataOutputStream output, DataInputStream input, Socket s) throws IOException, ClassNotFoundException {
@@ -398,6 +405,13 @@ public class EventClient {
         }
 
         eventClient(output, input, s);
+    }
+
+    static void userUI(DataOutputStream output, DataInputStream input, Socket s) throws IOException, ClassNotFoundException {
+        String title = "Welcome to the Event Management Screen, User!";
+        String viewEvent = "View Events";
+        String viewReg = "View Registrations";
+        String logout = "Logout";
     }
 
 
