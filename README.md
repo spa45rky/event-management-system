@@ -8,4 +8,13 @@ An EMS program for my Networks class where client-server communication is showca
 4) Program will start
 
 ## Photos
+###LOGIN SCREEN:
 ![Login Page](https://github.com/spa45rky/event-management-system/blob/main/SCREENSHOTS/LOGIN.PNG)
+###ADMIN MENU:
+![Admin Menu](https://github.com/spa45rky/event-management-system/blob/main/SCREENSHOTS/ADMIN.PNG)
+###USER MENU:
+![User Menu](https://github.com/spa45rky/event-management-system/blob/main/SCREENSHOTS/USER.PNG)
+###USER MANAGEMENT:
+![User Management](https://github.com/spa45rky/event-management-system/blob/main/SCREENSHOTS/USERMGMT.PNG)
+###USER EVENT SCREEN:
+![Register for Event](https://github.com/spa45rky/event-management-system/blob/main/SCREENSHOTS/ADDNEW.PNG)
